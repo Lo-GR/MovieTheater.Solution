@@ -25,7 +25,7 @@ namespace MovieTheater
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-        .AddDbContext<UniversityContext>(options => options
+        .AddDbContext<MovieTheaterContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
     }
 
