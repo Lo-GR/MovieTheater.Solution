@@ -1,0 +1,14 @@
+User Stories___
+1. As an owner, we want to store and display Movies. 
+  - Name for Movies
+  - Age Requirements for Movies
+  - Timeslots available for Movies
+2. As an owner, we want to sell tickets to Customers Movies. We can sell many tickets for multiple movies.
+  - Customer Name
+  - Ticket Number
+
+
+Further Exploration___ 
+1. Add list of DateTimes to Movies
+2. Add Movie Theater chains
+3. Add random ticket number generator for Ticket Property

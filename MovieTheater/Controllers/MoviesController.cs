@@ -39,6 +39,8 @@ namespace MovieTheater.Controllers
         .ThenInclude(join => join.Customer)
         .FirstOrDefault(movie => movie.MovieId == id);
       return View(thisMovie);
+    
+    
     }
 
     [HttpPost, ActionName("Delete")]
