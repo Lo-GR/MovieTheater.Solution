@@ -60,5 +60,12 @@ namespace MovieTheater.Controllers
       Movie model = _db.Movies.FirstOrDefault(movie => movie.MovieId == id);
       return View(model);
     }
+    [HttpPost]
+    public ActionResult Edit(Movie movie, int MovieId)
+    {
+      _db.Entry(movie).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

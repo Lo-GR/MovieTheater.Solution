@@ -12,7 +12,7 @@
   @Html.HiddenFor(model => model.Name)
 
   <p>Age Requirement</p>
-  @Html.EditorFor(model => model.MinAge, new {type="number"})
+  @Html.EditorFor(model => model.MinAge)
   @Html.LabelFor(model => model.TimeSlot)
   @Html.EditorFor(model => model.TimeSlot, new {type="time"})
 
