@@ -10,9 +10,9 @@
   @Html.LabelFor(model=>model.Name)
   @Html.TextBoxFor(model=>model.Name)
   @Html.LabelFor(model=>model.MinAge)
-  @Html.TextBoxFor(model=>model.MinAge, new { @input = "number"})
+  @Html.TextBoxFor(model=>model.MinAge, new { input = "number"})
   @Html.LabelFor(model=>model.TimeSlot)
-  @Html.TextBoxFor(model=>model.TimeSlot, new {@input = "time"})
+  @Html.TextBoxFor(model=>model.TimeSlot, new {input = "time"})
   <input type="submit" value="Add a movie">
 }
 <button class="btn btn-dark">@Html.ActionLink("Back to movies list", "Index")</button>
