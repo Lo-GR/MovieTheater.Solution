@@ -1,0 +1,14 @@
+@{
+  Layout ="_Layout";
+}
+
+@model MovieTheater.Models.Customer
+
+<h2>Are you sure you want to delete @Html.DisplayFor(model => model.CustomerName)</h2>
+
+@using (Html.BeginForm())
+{
+  <button type="submit" class="btn btn-danger"> Yes, I want to delete it</button>
+}
+
+<button class="btn btn-dark">@Html.ActionLink("Back to Customer List", "Index")</button>

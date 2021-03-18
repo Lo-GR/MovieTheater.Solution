@@ -23,5 +23,13 @@ namespace MovieTheater.Controllers
     {
       return View();
     }
+
+    [HttpPost]
+    public ActionResult Create(Customer customer)
+    {
+      _db.Customers.Add(customer);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
