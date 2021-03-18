@@ -40,5 +40,14 @@ namespace MovieTheater.Controllers
         .FirstOrDefault(movie => movie.MovieId == id);
       return View(thisMovie);
     }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisMovie = _db.Movies.FirstOrDefault(movie=>movie.MovieId == id);
+      _db.Movies.Remove(thisMovie);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
