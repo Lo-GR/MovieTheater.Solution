@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@using MovieTheater.Models;
+@model List<MovieTheater.Models.Movie>;
+
+<h1> List of Movies Currently Showing:</h1>
+@if (@Model.Count == 0)
+{
+  <h3>No Movies are currently airing</h3>
+}
+@foreach (Movie element in Model)
+{
+  <li>@Html.ActionLink($"{element.Name}", "Details", new {id = element.MovieId})</li>
+}
+<p>@Html.ActionLink("Add new Movie", "Create")</p>
