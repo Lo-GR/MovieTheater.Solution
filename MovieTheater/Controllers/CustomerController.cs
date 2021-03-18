@@ -18,5 +18,10 @@ namespace MovieTheater.Controllers
     {
       return View(_db.Customers.ToList());
     }
+
+    public ActionResult Create()
+    {
+      return View();
+    }
   }
 }
