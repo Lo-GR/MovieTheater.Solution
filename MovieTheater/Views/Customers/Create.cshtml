@@ -10,5 +10,8 @@
   @Html.LabelFor(model=>model.CustomerName)
   @Html.TextBoxFor(model=>model.CustomerName, new {@required = "required"})
   @Html.LabelFor(model=>model.TicketNumber)
-  @Html.TextBoxFor(model=>model.CustomerName, new {@required = "required"})
+  @Html.TextBoxFor(model=>model.TicketNumber, new {@required = "required"})
+  <button class="btn btn-info" type="submit">Create new customer</button>
 }
+
+<button class="btn btn-dark">@Html.ActionLink("Return to all customers", "Index")</button>
