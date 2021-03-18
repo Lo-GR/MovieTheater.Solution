@@ -54,5 +54,11 @@ namespace MovieTheater.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+    public ActionResult Edit(int id)
+    {
+      Customer model = _db.Customers.FirstOrDefault(customer => customer.CustomerId == id);
+      return View(model);
+    }
+    
   }
 }
