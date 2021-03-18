@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+<h2>Purhcase Tickets</h2>
+
+<h4>Add a ticket purchase</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.Label("Select Customer to Purchase Ticket")
+  @Html.DropDownList("Customers")
+  @Html.Label("Select Movie to purchase ticket for")
+  @Html.DropDownList("Movies")
+  <button class="btn btn-success" type="submit">Purchase Ticket</button>
+}
+
+<button class="btn btn-dark">@Html.ActionLink("See movies", "Index", "Movies")</button>
+<button class="btn btn-dark">@Html.ActionLink("See customers", "Index", "Customers")</button>
