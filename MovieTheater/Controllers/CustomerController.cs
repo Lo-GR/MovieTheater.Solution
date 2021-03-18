@@ -37,5 +37,13 @@ namespace MovieTheater.Controllers
       Customer thisCustomer = _db.Customers.FirstOrDefault(customer => customer.CustomerId == id);
       return View(thisCustomer);
     }
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Customer thisCustomer = _db.Customers.FirstOrDefault(customer => customer.CustomerId == id);
+      _db.Customers.Remove(thisCustomer);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
