@@ -1,0 +1,29 @@
+@{
+  Layout ="_Layout";
+}
+@using MovieTheater.Models;
+@model MovieTheater.Models.Movie
+
+<h2>Movie Details</h2>
+<p>---</p>
+<h3>Name: @Html.DisplayFor(model => model.Name)</h3>
+<h3>Age Requirement: @Html.DisplayFor(model => Model.MinAge)</h3>
+<h3>Time Slot Available (In Military Time): @Html.DisplayFor(model => model.TimeSlot)</h3>
+<h3>Customers Who Purchased Tickets for This Movie:</h3>
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>No customers yet</p>
+}
+else
+{
+  <ul>
+  @foreach (CustomerMovie element in Model.JoinEntities)
+  {
+    <li>@element.Customer.CustomerName</li>
+  }
+  </ul>
+}
+
+<button class="btn btn-dark">@Html.ActionLink("Back to movies list", "Index")</button>
+<button class="btn btn-dark">@Html.ActionLink("Edit Movie", "Edit", new {id = Model.MovieId})</button>
+<button class="btn btn-dark">@Html.ActionLink("Delete Movie", "Delete", new {id = Model.MovieId})</button>
