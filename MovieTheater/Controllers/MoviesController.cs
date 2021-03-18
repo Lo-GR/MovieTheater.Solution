@@ -9,6 +9,16 @@ namespace MovieTheater.Controllers
 {
   public class MoviesController : Controller
   {
+    private readonly MovieTheaterContext _db;
+    public MoviesController (MovieTheaterContext db)
+    {
+      _db = db;
+    }
+
+    public ActionResult Index()
+    {
+      return View(_db.Movies.ToList());
+    }
     
   }
 }
