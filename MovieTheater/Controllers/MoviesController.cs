@@ -19,6 +19,9 @@ namespace MovieTheater.Controllers
     {
       return View(_db.Movies.ToList());
     }
-    public Acti
+    public ActionResult Create()
+    {
+      return View();
+    }
   }
 }
