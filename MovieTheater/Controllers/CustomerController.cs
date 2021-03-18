@@ -31,5 +31,11 @@ namespace MovieTheater.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Delete(int id)
+    {
+      Customer thisCustomer = _db.Customers.FirstOrDefault(customer => customer.CustomerId == id);
+      return View(thisCustomer);
+    }
   }
 }
