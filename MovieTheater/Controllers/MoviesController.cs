@@ -31,5 +31,14 @@ namespace MovieTheater.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Details(int id)
+    {
+      var thisMovie = _db.Movies
+        .Include(movie => movie.JoinEntities)
+        .ThenInclude(join => join.Customer)
+        .FirstOrDefault(movie => movie.MovieId == id);
+      return View(thisMovie);
+    }
   }
 }
