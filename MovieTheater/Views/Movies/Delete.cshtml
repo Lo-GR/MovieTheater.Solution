@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+@model MovieTheater.Models.Movie
+
+<h3>Are you sure you want to delete it?</h3>
+
+@Html.DisplayNameFor(model=>model.Name): @Html.DisplayFor(model=>model.Name)
+@using (Html.BeginForm())
+{
+  <button type="submit" class="btn btn-danger"> Yes, I want to delete it</button>
+}
+
+<button class="btn btn-dark">@Html.ActionLink("No, get me back to the movies list", "Index")</button>
