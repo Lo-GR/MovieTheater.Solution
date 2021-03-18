@@ -22,13 +22,13 @@ namespace MovieTheater.Controllers
       return View();
     }
     [HttpPost]
-    public ActionResult Create(int CustomerId, int MovieId)
+    public ActionResult Create(Customer customer, Movie movie)
     {
-      if (MovieId != 0 && CustomerId !=0)
+      if (movie.MovieId != 0 && customer.CustomerId !=0)
       {
         _db.CustomerMovie.Add(new CustomerMovie()
         {
-          MovieId = MovieId, CustomerId = CustomerId
+          MovieId = movie.MovieId, CustomerId = customer.CustomerId
         });
         _db.SaveChanges();
       }
