@@ -39,8 +39,12 @@ namespace MovieTheater.Controllers
         .ThenInclude(join => join.Customer)
         .FirstOrDefault(movie => movie.MovieId == id);
       return View(thisMovie);
-    
-    
+    }
+
+    public ActionResult Delete(int id)
+    {
+      var thisMovie = _db.Movies.FirstOrDefault(movie=>movie.MovieId == id);
+      return View(thisMovie);
     }
 
     [HttpPost, ActionName("Delete")]
