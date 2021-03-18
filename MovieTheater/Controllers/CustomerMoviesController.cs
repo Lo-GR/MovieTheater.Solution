@@ -21,5 +21,18 @@ namespace MovieTheater.Controllers
       ViewBag.Movies = new SelectList(_db.Movies, "MovieId", "Name");
       return View();
     }
+    [HttpPost]
+    public ActionResult Create(int CustomerId, int MovieId)
+    {
+      if (MovieId != 0 && CustomerId !=0)
+      {
+        _db.CustomerMovie.Add(new CustomerMovie()
+        {
+          MovieId = MovieId, CustomerId = CustomerId
+        });
+        _db.SaveChanges();
+      }
+        return RedirectToAction("Index", "Home");
+    }
   }
 }
