@@ -61,7 +61,7 @@ namespace MovieTheater.Controllers
       return View(model);
     }
     [HttpPost]
-    public ActionResult Edit(Movie movie, int MovieId)
+    public ActionResult Edit(Movie movie)
     {
       _db.Entry(movie).State = EntityState.Modified;
       _db.SaveChanges();

@@ -59,6 +59,12 @@ namespace MovieTheater.Controllers
       Customer model = _db.Customers.FirstOrDefault(customer => customer.CustomerId == id);
       return View(model);
     }
-    
+    [HttpPost]
+    public ActionResult Edit(Customer customer)
+    {
+      _db.Entry(customer).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
