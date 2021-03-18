@@ -1,0 +1,16 @@
+@{
+  Layout ="_Layout";
+}
+
+@model MovieTheater.Models.Movie
+
+<h2>Edit movie details for @Html.DisplayFor(model => model.Name)</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.MovieId)
+  @Html.HiddenFor(model => model.Name)
+
+  <p>Age Requirement</p>
+  @Html.EditorFor(model => model.MinAge)
+}

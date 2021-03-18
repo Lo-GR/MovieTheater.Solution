@@ -32,6 +32,15 @@ namespace MovieTheater.Controllers
       return RedirectToAction("Index");
     }
 
+    public ActionResult Details(int id)
+    {
+      Customer thisCustomer = _db.Customers
+        .Include( customer=>customer.JoinEntities)
+        .ThenInclude(join=>join.Movie)
+        .FirstOrDefault(customer=>customer.CustomerId == id);
+      return View(thisCustomer);
+    }
+
     public ActionResult Delete(int id)
     {
       Customer thisCustomer = _db.Customers.FirstOrDefault(customer => customer.CustomerId == id);
