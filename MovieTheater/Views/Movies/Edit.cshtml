@@ -14,7 +14,7 @@
   <p>Age Requirement</p>
   @Html.EditorFor(model => model.MinAge)
   @Html.LabelFor(model => model.TimeSlot)
-  @Html.EditorFor(model => model.TimeSlot, new {type="time"})
+  @Html.TextBoxFor(model => model.TimeSlot, new {@type="time"})
 
   <button type="submit" class="btn btn-dark">Submit Changes</button>
 }
