@@ -11,7 +11,7 @@ namespace MovieTheater.Models
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-      optionsBuilder.UseLazyLoadProxies();
+      optionsBuilder.UseLazyLoadingProxies();
     }
   }
 }
