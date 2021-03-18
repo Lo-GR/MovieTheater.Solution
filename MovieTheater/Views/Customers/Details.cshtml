@@ -1,0 +1,31 @@
+@{
+  Layout = "_Layout";
+}
+
+@model MovieTheater.Models.Customer
+
+<h3>Movies for @Model.CustomerName</h3>
+
+@if(Model.JoinEntities.Count == 0)
+{
+  <p>No movies have been purchased yet! </p>
+}
+else
+{
+  <ul>
+    @foreach (var join in Model.JoinEntities)
+    {
+      <li>@join.Movie.Name</li>
+      @using (Html.BeginForm("DeleteMovie", "Customers"))
+      {
+        @Html.Hidden("joinId", @join.CustomerMovieId)
+        <button class="btn btn-danger" type="submit">Delete this movie</button>
+      }
+    }
+  </ul>
+}
+
+<button class="btn btn-dark">@Html.ActionLink("Back to all customers", "Index")</button>
+<button class="btn btn-dark">@Html.ActionLink("Delete this customer", "Delete")</button>
+<button class="btn btn-dark">@Html.ActionLink("Edit this customer details", "Edit")</button>
+
